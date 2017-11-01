@@ -1,5 +1,5 @@
 module.exports = {
-    callEnded: function (success, fail) {
-        cordova.exec(success, fail, "Calls", "callEnded", []);
+    callListener: function (success, fail) {
+        cordova.exec(success, fail, "Calls", "callListener", []);
     }
 };
