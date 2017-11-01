@@ -1,0 +1,24 @@
+{
+  "name": "cordova-plugin-calls",
+  "version": "0.0.1",
+  "description": "Cordova Calls Plugin",
+  "cordova": {
+    "id": "cordova-plugin-calls",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xtravanta/cordova-plugin-calls"
+  },
+  "keywords": [
+    "cordova",
+    "calls",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Stefan Jansen"
+}

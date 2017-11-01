@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-calls" version="0.0.1">
+
+    <name>Calls</name>
+    <description>Cordova Calls Plugin</description>
+    <keywords>cordova,calls</keywords>
+    <repo>https://github.com/xtravanta/cordova-plugin-calls</repo>
+
+    <!-- android -->
+    <platform name="android">
+        <js-module src="www/calls.js" name="calls">
+            <clobbers target="Calls" />
+        </js-module>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Calls">
+                <param name="android-package" value="com.blaud.calls"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Calls.java" target-dir="src/com/blaud/calls" />
+    </platform>
+    
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/calls.js" name="calls">
+            <clobbers target="Calls" />
+        </js-module>
+        
+        <config-file target="config.xml" parent="/*">
+            <feature name="Calls">
+                <param name="ios-package" value="Calls" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/Calls.h" />
+	    <source-file src="src/ios/Calls.m" />
+
+	    <framework src="CoreGraphics.framework" />
+    </platform>
+</plugin>
