@@ -5,7 +5,8 @@
 @property (nonatomic, strong) CXCallObserver *callObserver;
 
 
-- (void) callListener:(CDVInvokedUrlCommand*)command;
+- (void) startListener:(CDVInvokedUrlCommand*)command;
+- (void) stopListener:(CDVInvokedUrlCommand*)command;
 
 @property (nonatomic, copy) NSString* callbackId;
 
