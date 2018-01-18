@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.telephony.TelephonyManager;
-import android.widget.Toast;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
@@ -64,7 +63,6 @@ public class CallBroadcastReceiver extends BroadcastReceiver {
                 isIncoming = true;
                 callStartTime = new Date();
                 savedNumber = number;
-                Toast.makeText(context, "Incoming Call Ringing" , Toast.LENGTH_SHORT).show();
                 break;
             case TelephonyManager.CALL_STATE_OFFHOOK:
                 ended = false;
@@ -72,7 +70,6 @@ public class CallBroadcastReceiver extends BroadcastReceiver {
                 if(lastState != TelephonyManager.CALL_STATE_RINGING){
                     isIncoming = false;
                     callStartTime = new Date();
-                    Toast.makeText(context, "Outgoing Call Started" , Toast.LENGTH_SHORT).show();
                 }
 
                 break;
@@ -80,16 +77,12 @@ public class CallBroadcastReceiver extends BroadcastReceiver {
                 //Went to idle-  this is the end of a call.  What type depends on previous state(s)
                 if(lastState == TelephonyManager.CALL_STATE_RINGING){
                     //Ring but no pickup-  a miss
-                    Toast.makeText(context, "Ringing but no pickup" + savedNumber + " Call time " + callStartTime +" Date " + new Date() , Toast.LENGTH_SHORT).show();
                 }
                 else if(isIncoming){
                     ended = true;
-                    Toast.makeText(context, "Incoming " + savedNumber + " Call time " + callStartTime  , Toast.LENGTH_SHORT).show();
                 }
                 else{
                     ended = true;
-                    Toast.makeText(context, "outgoing " + savedNumber + " Call time " + callStartTime +" Date " + new Date() , Toast.LENGTH_SHORT).show();
-
                 }
 
                 break;
