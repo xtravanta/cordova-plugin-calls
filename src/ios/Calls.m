@@ -21,7 +21,7 @@
 }
 
 - (void) stopListener:(CDVInvokedUrlCommand*)command {
-
+    
     // CLEAR THE OBSERVER
     self.callObserver = nil;
     
@@ -29,11 +29,11 @@
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"call listener stopped"];
     [pluginResult setKeepCallback:[NSNumber numberWithBool:NO]];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
-
+    
     // CLOSE THIS CALLBACK
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Ok"];
-    [pluginResult setKeepCallback:[NSNumber numberWithBool:NO]];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    CDVPluginResult* pluginResult1 = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Ok"];
+    [pluginResult1 setKeepCallback:[NSNumber numberWithBool:NO]];
+    [self.commandDelegate sendPluginResult:pluginResult1 callbackId:command.callbackId];
 }
 
 - (void)callObserver:(CXCallObserver *)callObserver callChanged:(CXCall *)call {
@@ -56,3 +56,4 @@
 }
 
 @end
+
